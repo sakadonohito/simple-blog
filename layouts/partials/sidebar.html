@@ -1,0 +1,26 @@
+<aside>
+	<div class="side-menu">
+		<section>
+			<p>Categories</p>
+			<ul>
+				{{ range $name,$cat := .Site.Taxonomies.categories }}
+				<li><a href="/categories/{{$name}}">{{ $name }}</a>({{ len $cat }})</li>
+				{{ end }}
+			</ul>
+		</section>
+		<section>
+			<p><a href="/tags/">Tags</a></p>
+			<ul>
+				{{ range $name,$tag := .Site.Taxonomies.tags }}
+				<li><a href="/tags/{{$name}}">{{ $name }}</a>({{ len $tag }})</li>
+				{{ end }}
+			</ul>
+		</section>
+		<section>
+			<p>Etc</p>
+			<ul>
+				<li>About</li>
+			</ul>
+		</section>
+	</div>
+</aside>

@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main role="main">
+	<div class="main-contents">
+		<article class="main-content">
+			<header>
+				<h1>{{ .Title }}</h1>
+				<ul class="horizontal-list-over767">
+					<li>Published: {{ .Date.Format "2006年01月02日" }}</li>
+				</ul>
+				<p>Category: {{ range $category := .Params.categories }} <a href="/categories/{{ $category | urlize }}/">{{ $category }}</a> {{end}}</p>
+			</header>
+			<section>
+				<p>{{ .Content }}</p>
+			</section>
+			<footer>
+				<p>tags: {{ range $tag := .Params.tags }} <a href="/tags/{{ $tag | urlize }}/">#{{ $tag }}</a>, {{end}}</p>
+			</footer>
+		</article>
+	</div>
+</main>
+{{ end }}

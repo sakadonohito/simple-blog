@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+		<title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+		{{ partial "head.html" . }}
+	</head>
+	<body>
+		<div class="wrapper">
+			{{ partial "site-header.html" . }}
+			<div class="main-part">
+				{{ block "main" . }}
+				<!-- The part of the page that begins to differ between templates -->
+				{{ end }}
+				{{ partial "sidebar.html" . }}
+			</div>
+			{{ partial "footer.html" . }}
+		</div>
+		{{ partial "footer-js.html" . }}
+	</body>
+</html>

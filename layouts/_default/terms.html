@@ -1,0 +1,17 @@
+{{ define "main" }}
+<main role="main">
+	<div class="main-contents">
+		<header>
+			<h1>{{ .Title }} List</h1>
+		</header>
+		<div class="article-list">
+			{{ $plural := .Data.Plural }}
+			{{ range $key, $value := .Data.Terms }}
+			<article>
+				<h3><a href="/{{ $plural }}/{{ $key | urlize }}">{{ $key }}</a>({{ len $value}})</h3>
+			</article>
+			{{ end }}
+		</div>
+	</div>
+</main>
+{{ end }}

@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main role="main">
+	<div class="main-contents">
+		<h3>最新の記事</h3>
+		{{ range first 1 .Data.Pages }}
+		<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+		{{ partial "single-content.html" . }}
+		{{ end }}
+	</div>
+</main>
+{{ end }}
