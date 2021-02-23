@@ -1,11 +1,17 @@
 {{ define "main" }}
 <main role="main">
-	<div class="main-contents">
-		<h3>最新の記事</h3>
-		{{ range first 1 .Data.Pages }}
-		<h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-		{{ partial "single-content.html" . }}
-		{{ end }}
-	</div>
+  <div class="main-contents">
+    <h3>最新の記事</h3>
+    {{ range first 1 .Site.RegularPages.ByDate.Reverse }}
+    <article class="top-single-content">
+      <section>
+        <header>
+	  <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        </header>
+      </section>
+      {{ partial "single-content.html" . }}
+    </article>
+    {{ end }}
+  </div>
 </main>
 {{ end }}

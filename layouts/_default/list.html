@@ -1,14 +1,14 @@
 {{ define "main" }}
 <main role="main">
-	<div class="main-contents">
-		<header>
-			<h1>{{ .Title }} Posts</h1>
-		</header>
-		<div class="article-list">
-			{{ range .Data.Pages }}
-			{{ .Render "li" }}
-			{{ end }}
-		</div>
-	</div>
+  <div class="main-contents">
+    <header>
+      <h1>{{ .Title }}</h1>
+    </header>
+    <div class="article-list">
+   {{ range .Data.Pages }}
+	{{ .Render "li" }}
+   {{ end }}
+    </div>
+  </div>
 </main>
 {{ end }}
